@@ -8,7 +8,6 @@ import { useSpring, animated, config } from "react-spring";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 import useScrollPosition from "../hooks/useScrollPosition";
-import { themeColor } from "../helper/utils";
 // import Router from "next/router";
 import Header from "../components/Header"
 
@@ -51,7 +50,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <div className={`main-div    `}>
       <div>
-        <section exit={{ opacity: 0 }}>
+        <section >
           {checkForRouteEnabledAnimation(router.asPath) && routerChnage ? (
             <RouteAnimation
               setrouterChnage={setrouterChnage}
