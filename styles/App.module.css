@@ -1,0 +1,32 @@
+.one {
+  background-color: red;
+  height: 50vh;
+  width: calc(100vw - 16px);
+}
+
+.two {
+  background-color: green;
+  height: 50vh;
+  width: calc(100vw - 16px);
+}
+
+.three {
+  background-color: blue;
+  height: 100vh;
+  width: calc(100vw - 16px);
+}
+
+.pin__target {
+  opacity: 1;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blanchedalmond;
+  height: 300vh;
+  overflow-y: hidden;
+}
