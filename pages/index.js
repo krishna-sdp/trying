@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Scrollbar from "smooth-scrollbar";
 import styled from "styled-components";
 // import Navigatiion from "../components/navigation";
 // import styles from "../styles/App.module.css";
