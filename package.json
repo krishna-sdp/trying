@@ -12,9 +12,7 @@
     "next": "latest",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-smooth-scrollbar": "8.0.6",
-    "smooth-scrollbar": "8.6.2",
-    "smooth-scrollbar-react": "2.1.0",
+
     "styled-components": "5.3.3"
   },
   "license": "MIT",

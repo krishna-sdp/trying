@@ -3,8 +3,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Scrollbar from "smooth-scrollbar";
 import styled from "styled-components";
-import Navigatiion from "../components/navigation";
-import styles from "../styles/App.module.css";
+// import Navigatiion from "../components/navigation";
+// import styles from "../styles/App.module.css";
 
 export default function IndexPage() {
   gsap.registerPlugin(ScrollTrigger);
@@ -72,7 +72,7 @@ export default function IndexPage() {
   // }, [scrollBarCreated]);
 
   return (
-    <App className="App">
+    <Mydiv >
       <Boxes>
         <div className="box box1">
           <h1>Box 1</h1>
@@ -82,10 +82,10 @@ export default function IndexPage() {
           <h1>Box 4</h1>
         </div>
       </Boxes>
-    </App>
+    </Mydiv>
   );
 }
-const App = styled.div`
+const Mydiv = styled.div`
   font-family: sans-serif;
   text-align: center;
   display: flex;
