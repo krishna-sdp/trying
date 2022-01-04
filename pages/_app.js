@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "tachyons";
 import "../styles/styles.scss";
-import dynamic from "next/dynamic";
-import { AnimatePresence, motion } from "framer-motion";
+// import dynamic from "next/dynamic";
+// import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useSpring, animated, config } from "react-spring";
 import "react-toastify/dist/ReactToastify.css";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import useScrollPosition from "../hooks/useScrollPosition";
-import { themeColor } from "../helper/utils";
-import Router from "next/router";
+// import { themeColor } from "../helper/utils";
+// import Router from "next/router";
 
-const Header = dynamic(() => import("../components/Header"), { ssr: false });
+// const Header = dynamic(() => import("../components/Header"), { ssr: false });
 
 // Animation on scroll
 // import AOS from "aos";
@@ -20,54 +20,55 @@ const Header = dynamic(() => import("../components/Header"), { ssr: false });
 // import SmoothScroll from "../components/Layout/smoothScroll";
 // import Cursor from "../components/Layout/cursor";
 const App = ({ Component, pageProps }) => {
-  const scrollPosition = useScrollPosition();
-  const router = useRouter();
-  // const scrollPos = useScrollPosition();
-  const [routerChnage, setrouterChnage] = useState(false);
+  // const scrollPosition = useScrollPosition();
+  // const router = useRouter();
+  // // const scrollPos = useScrollPosition();
+  // const [routerChnage, setrouterChnage] = useState(false);
 
-  useEffect(() => {
-    // intiate AOS
-    // AOS.init({ duration: 1500 });
+  // useEffect(() => {
+  //   // intiate AOS
+  //   // AOS.init({ duration: 1500 });
 
-    const handleRouteChange = () => {
-      // if this is not home page
+  //   const handleRouteChange = () => {
+  //     // if this is not home page
 
-      // if (router.pathname !== "/") {
-      //   setrouterChnage(true);
-      // }
-      setrouterChnage(true);
-    };
+  //     // if (router.pathname !== "/") {
+  //     //   setrouterChnage(true);
+  //     // }
+  //     setrouterChnage(true);
+  //   };
 
-    router.events.on("routeChangeStart", handleRouteChange);
+  //   router.events.on("routeChangeStart", handleRouteChange);
 
-    // If the component is unmounted, unsubscribe
-    // from the event with the `off` method:
-    return () => {
-      router.events.off("routeChangeStart", handleRouteChange);
-    };
-  }, []);
+  //   // If the component is unmounted, unsubscribe
+  //   // from the event with the `off` method:
+  //   return () => {
+  //     router.events.off("routeChangeStart", handleRouteChange);
+  //   };
+  // }, []);
 
-  function checkForRouteEnabledAnimation(asPath) {
-    const substrings = [
-      "/",
-      "/blogs",
-      "/whitepapers",
-      "/infographics",
-      "/resources",
-      "/career/role-overview",
-      "/career/apply-job",
-    ];
-    if (substrings.some((v) => asPath === v)) {
-      // Will only return when the `str` is included in the `substrings`
-      return false;
-    } else {
-      return true;
-    }
-  }
+  // function checkForRouteEnabledAnimation(asPath) {
+  //   const substrings = [
+  //     "/",
+  //     "/blogs",
+  //     "/whitepapers",
+  //     "/infographics",
+  //     "/resources",
+  //     "/career/role-overview",
+  //     "/career/apply-job",
+  //   ];
+  //   if (substrings.some((v) => asPath === v)) {
+  //     // Will only return when the `str` is included in the `substrings`
+  //     return false;
+  //   } else {
+  //     return true;
+  //   }
+  // }
 
   return (
     <div className={`main-div    `}>
-      <div>
+      <Component {...pageProps} key={router.route} />
+      {/* <div>
         <AnimatePresence exitBeforeEnter>
           <motion.section exit={{ opacity: 0 }}>
             {checkForRouteEnabledAnimation(router.asPath) && routerChnage ? (
@@ -81,7 +82,7 @@ const App = ({ Component, pageProps }) => {
                   <Component {...pageProps} />
                 ) : (
                   <>
-                    <Header />
+ <Header /> 
                     <div className="content-page">
                       <Component {...pageProps} key={router.route} />
                     </div>
@@ -92,7 +93,7 @@ const App = ({ Component, pageProps }) => {
             )}
           </motion.section>
         </AnimatePresence>
-      </div>
+      </div> */}
     </div>
   );
 };
