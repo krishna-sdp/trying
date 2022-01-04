@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "tachyons";
-import "../styles/styles.scss";
+// import "../styles/styles.scss";
 // import dynamic from "next/dynamic";
 // import { AnimatePresence, motion } from "framer-motion";
-import { useRouter } from "next/router";
-import { useSpring, animated, config } from "react-spring";
+// import { useRouter } from "next/router";
+// import { useSpring, animated, config } from "react-spring";
 import "react-toastify/dist/ReactToastify.css";
 // import Footer from "../components/Footer";
-import useScrollPosition from "../hooks/useScrollPosition";
+// import useScrollPosition from "../hooks/useScrollPosition";
 // import { themeColor } from "../helper/utils";
 // import Router from "next/router";
 
@@ -67,7 +67,7 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <div className={`main-div    `}>
-      <Component {...pageProps} key={router.route} />
+      <Component {...pageProps}  />
       {/* <div>
         <AnimatePresence exitBeforeEnter>
           <motion.section exit={{ opacity: 0 }}>
