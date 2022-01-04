@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "tachyons";
-import "../styles/styles.scss";
-import dynamic from "next/dynamic";
+// import "../styles/styles.scss";
+// import dynamic from "next/dynamic";
 // import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useSpring, animated, config } from "react-spring";
@@ -9,9 +9,10 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer";
 import useScrollPosition from "../hooks/useScrollPosition";
 import { themeColor } from "../helper/utils";
-import Router from "next/router";
+// import Router from "next/router";
+import Header from "../components/Header"
 
-const Header = dynamic(() => import("../components/Header"), { ssr: false });
+// const Header = dynamic(() => import("../components/Header"), { ssr: false });
 
 const App = ({ Component, pageProps }) => {
   const scrollPosition = useScrollPosition();

@@ -9,13 +9,13 @@ import { useSpring, animated } from "react-spring";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import { useViewportScroll } from "framer-motion";
 import { Collapse } from "antd";
-import useCheckMobileScreen from "../../hooks/isMobile";
+
+import { isMobile } from "react-device-detect";
 
 const { Panel } = Collapse;
 
 export default function Header({}) {
   const scrollPosition = useScrollPosition();
-  const isMobile = useCheckMobileScreen();
 
   // console.log(isMobile);
   const [colourState, setcolourState] = useState("home-nav");
@@ -69,7 +69,7 @@ export default function Header({}) {
 
   const linClicked = (params) => {
     setToggleNav(false);
-    setactiveSer(false)
+    setactiveSer(false);
     setactiveKey(false);
   };
 
@@ -99,34 +99,42 @@ export default function Header({}) {
             <div className="logo">
               <animated.div style={LogoAnimation} className="">
                 <Link href="/">
-                  <a onClick={() => linClicked()} className=" my-link logo-container pointer moble-left-pad">
-                    {router.pathname === "/" ? <SDPlogo /> : toggleNav? <SDPlogo /> : <SDPlogoBlue />}
+                  <a
+                    onClick={() => linClicked()}
+                    className=" my-link logo-container pointer moble-left-pad"
+                  >
+                    {router.pathname === "/" ? (
+                      <SDPlogo />
+                    ) : toggleNav ? (
+                      <SDPlogo />
+                    ) : (
+                      <SDPlogoBlue />
+                    )}
                   </a>
                 </Link>
               </animated.div>
             </div>
 
-
-            <div className={`burger-container2 menu-nav ${toggleNav? "toggleHamberger":""}`}>
-                <div onClick={() => menuClicked()} id="burger">
-                  <div
-                    onClick={() => menuClicked()}
-                    className={`${
-                      router.pathname === "/" ? `bg-white ` : "bg-black"
-                    } bar topBar`}
-                  ></div>
-                  <div
-                    onClick={() => menuClicked()}
-                    className={`${
-                      router.pathname === "/" ? `bg-white ` : "bg-black"
-                    } bar btmBar`}
-                  ></div>
-                </div>
+            <div
+              className={`burger-container2 menu-nav ${
+                toggleNav ? "toggleHamberger" : ""
+              }`}
+            >
+              <div onClick={() => menuClicked()} id="burger">
+                <div
+                  onClick={() => menuClicked()}
+                  className={`${
+                    router.pathname === "/" ? `bg-white ` : "bg-black"
+                  } bar topBar`}
+                ></div>
+                <div
+                  onClick={() => menuClicked()}
+                  className={`${
+                    router.pathname === "/" ? `bg-white ` : "bg-black"
+                  } bar btmBar`}
+                ></div>
               </div>
-
-
-
-          
+            </div>
 
             <ul className="main-nav ">
               <li>
@@ -158,9 +166,9 @@ export default function Header({}) {
                       activeSer
                         ? {
                             display: "block",
-                            borderTop:" 1px solid #dfe0ed"
+                            borderTop: " 1px solid #dfe0ed",
                           }
-                        : {height:"0",padding:"0"}
+                        : { height: "0", padding: "0" }
                     }
                     className={`bg-white dropdown-content  regular-font`}
                   >
@@ -262,7 +270,9 @@ export default function Header({}) {
           </div>
 
           <div className={`window ${toggleNav ? `hv-100` : ``} `}>
-            <div className={`header ${toggleNav ? `menu-opened` : ``} menu-nav`}>
+            <div
+              className={`header ${toggleNav ? `menu-opened` : ``} menu-nav`}
+            >
               {/* <div className={`burger-container`}>
                 <div onClick={() => menuClicked()} id="burger">
                   <div
@@ -371,7 +381,6 @@ export default function Header({}) {
               </ul>
             </div>
           </div>
-
         </div>
       </header>
     </div>
