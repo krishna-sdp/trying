@@ -1,120 +1,124 @@
-import { useEffect, useState, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import styled from "styled-components";
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import About from "../components/Home/About";
+import dynamic from "next/dynamic";
 
-export default function IndexPage() {
-  gsap.registerPlugin(ScrollTrigger);
+// import Banners from "../components/Home/Banners"
+import WorkShocase from "../components/Home/WorkShocase";
+import Testimonials from "../components/Home/Testimonials";
+import ClientLogo from "../components/ClientLogo";
+// import Router from "next/router";  
+// const Banners = dynamic(() => import("../components/Home/Banners"), {
+//   ssr: false,
+// });
+import Banners from "../components/Home/Banners";
 
-  useEffect(() => {
-    const load = async () => {
-      if (typeof window !== undefined) {
-        gsap.from(".box1", {
-          scrollTrigger: {
-            trigger: ".box1",
-            start: "center center",
-            end: "center top",
-            pin: true,
-            scrub: 0.2,
-          },
-          x: "-100%",
-          ease: "power.in",
-          scale: "2",
-          transformOrigin: "center center",
-          opacity: 0,
-        });
-        gsap.from(".box2", {
-          scrollTrigger: {
-            trigger: ".box2",
-            start: "center center",
-            end: "center top",
-            pin: true,
-            scrub: 0.2,
-          },
-          x: "100%",
-          ease: "power.in",
-          scale: "2",
-          transformOrigin: "center center",
-          opacity: 0,
-        });
-      }
-    };
-    load();
-  }, []);
-
-  // const [scrollBarCreated, setScrollBarCreated] = useState(false);
-  // const scroller = useRef();
-  // const bodyScrollBar = useRef();
-
-  // useEffect(() => {
-  //   scroller.current = document.querySelector(".scroller");
-  //   bodyScrollBar.current = Scrollbar.init(scroller.current);
-  //   setScrollBarCreated(true);
-  // }, []);
-
-  // useEffect(() => {
-  //   if (scrollBarCreated) {
-  //     gsap.registerPlugin(ScrollTrigger);
-  //     ScrollTrigger.scrollerProxy(scroller.current, {
-  //       scrollTop(value) {
-  //         if (arguments.length) {
-  //           bodyScrollBar.current.scrollTop = value;
-  //         }
-  //         return bodyScrollBar.current.scrollTop;
-  //       }
-  //     });
-  //     bodyScrollBar.current.addListener(ScrollTrigger.update);
-  //     ScrollTrigger.defaults({ scroller: scroller.current });
-  //   }
-  // }, [scrollBarCreated]);
+const Services1 = dynamic(() => import("../components/Home/Services1"), {
+  ssr: false,
+});
+export default function Landing({}) {
 
   return (
-    <App className="App">
-      <Boxes>
-        <div className="box box1">
-          <h1>Box 1</h1>
-        </div>
-
-        <div className="box box2">
-          <h1>Box 4</h1>
-        </div>
-      </Boxes>
-    </App>
+    <div className="home-page">
+      {/* {isFirstMount && <InitialTransition />} */}
+      <Banners />
+      {/* <New/> */}
+      <About />
+      <WorkShocase />
+      <Services1 />
+      <Testimonials />
+      <ClientLogo />
+    </div>
   );
 }
-const App = styled.div`
-  font-family: sans-serif;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: blanchedalmond;
-  height: 300vh;
-  overflow-y: hidden;
-`;
-const Boxes = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+const InitialTransition = () => {
+  // Scroll user to top to avoid showing the footer
+  React.useState(() => {
+    typeof windows !== "undefined" && window.scrollTo(0, 0);
+  }, []);
+  return (
+    <motion.div
+      className="absolute z-max flex items-center fixed justify-center w-100 bg-black"
+      initial="initial"
+      animate="animate"
+      variants={blackBox}
+      onAnimationStart={() => document.body.classList.add("overflow-hidden")}
+      onAnimationComplete={() =>
+        document.body.classList.remove("overflow-hidden")
+      }
+    >
+      <motion.svg variants={textContainer} className="absolute z-max flex">
+        <pattern
+          id="pattern"
+          patternUnits="userSpaceOnUse"
+          width={750}
+          height={800}
+          className="white"
+        >
+          <rect className="w-full h-full fill-current" />
+          <motion.rect
+            variants={text}
+            className="w-full h-full gray-600 fill-current"
+          />
+        </pattern>
+        <text
+          className="f1 bold"
+          textAnchor="middle"
+          x="50%"
+          y="50%"
+          style={{ fill: "white" }}
+        >
+          SDP Website
+        </text>
+      </motion.svg>
+    </motion.div>
+  );
+};
+const blackBox = {
+  initial: {
+    height: "100%",
+    bottom: 0,
+  },
+  animate: {
+    height: 0,
+    transition: {
+      when: "afterChildren",
+      duration: 1.5,
+      ease: [0.87, 0, 0.13, 1],
+    },
+  },
+};
+const textContainer = {
+  initial: {
+    opacity: 1,
+  },
+  animate: {
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+      when: "afterChildren",
+    },
+  },
+};
+const text = {
+  initial: {
+    y: 40,
+  },
+  animate: {
+    y: 80,
+    transition: {
+      duration: 1.5,
+      ease: [0.87, 0, 0.13, 1],
+    },
+  },
+};
 
-  .box {
-    width: 150px;
-    height: 400px;
-  }
+// import Banners from "../components/Home/Banners";
 
-  .box1 {
-    background-color: #ffaaaa;
-  }
-
-  .box2 {
-    background-color: #d46a6a;
-  }
-
-  .box3 {
-    background-color: #801515;
-  }
-
-  .box4 {
-    background-color: #550000;
-  }
-`;
+// export default function Dummy() {
+//   return (
+//     <div>
+//       <Banners />
+//     </div>
+//   );
+// }

@@ -1,0 +1,141 @@
+// work life gallery section
+.work4 {
+  .container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .container1 .box1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .container1 .box1 .dream1 {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+
+  .container1 .box1 .dream1 img {
+    width: 100%;
+  }
+
+  .card-section {
+    h1 {
+      font-size: 32px;
+      color: #02021e;
+    }
+
+    h3 {
+      font-size: 24px;
+      color: #5e5e76;
+      letter-spacing: 0.24px;
+    }
+  }
+
+  @media only screen and (max-width: 769px) {
+    .container1 .box1 {
+      flex-direction: column;
+    }
+    .container1 .box1 .dream1 {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .work4-heading {
+      h1 {
+        font-size: 50px !important;
+        margin-top: 0px !important;
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: 1.6;
+        letter-spacing: 0.34px;
+        color: #02021e;
+      }
+    }
+
+    .card-section {
+      h1 {
+        font-size: 20px;
+        margin-top: 0px;
+        padding-top: 0px;
+      }
+
+      h3 {
+        font-size: 14px;
+      }
+    }
+
+    // .container1 .box1 .dream1 img {
+    //   padding-bottom: 10px ;
+    // }
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .work-page-new {
+    .work4-heading {
+      h1 {
+        font-size: 55px !important;
+      }
+
+      h3 {
+        font-size: 22px !important;
+        line-height: 1.1 !important;
+      }
+    }
+  }
+}
+
+.work-page-new {
+  .work4-heading {
+    h1 {
+      font-size: 80px;
+    }
+
+    h3 {
+      font-size: 32px;
+      line-height: 1.6;
+      letter-spacing: 0.34px;
+      color: #02021e;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 79px) and (max-device-width: 1339px) {
+
+.work-page-new {
+    .work4-heading {
+      h1 {
+        font-size: 50px !important;
+      }
+
+      h3 {
+        font-size: 26px !important;
+        line-height: 1.1 !important;
+      }
+    }
+  }
+
+  .work4 {
+  .card-section {
+    h1 {
+      font-size: 24px;
+      margin-top: 0px;
+      padding-top: 0px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+  }
+}
+
+
+}
