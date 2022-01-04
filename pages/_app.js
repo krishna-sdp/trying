@@ -13,12 +13,6 @@ import Router from "next/router";
 
 const Header = dynamic(() => import("../components/Header"), { ssr: false });
 
-// Animation on scroll
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-
-// import SmoothScroll from "../components/Layout/smoothScroll";
-// import Cursor from "../components/Layout/cursor";
 const App = ({ Component, pageProps }) => {
   const scrollPosition = useScrollPosition();
   const router = useRouter();
@@ -26,26 +20,14 @@ const App = ({ Component, pageProps }) => {
   const [routerChnage, setrouterChnage] = useState(false);
 
   useEffect(() => {
-    // intiate AOS
-    // AOS.init({ duration: 1500 });
-
     const handleRouteChange = () => {
-      // if this is not home page
-
-      // if (router.pathname !== "/") {
-      //   setrouterChnage(true);
-      // }
       setrouterChnage(true);
     };
-
     router.events.on("routeChangeStart", handleRouteChange);
-
-    // If the component is unmounted, unsubscribe
-    // from the event with the `off` method:
     return () => {
       router.events.off("routeChangeStart", handleRouteChange);
     };
-  }, []);
+  }, [router]);
 
   function checkForRouteEnabledAnimation(asPath) {
     const substrings = [

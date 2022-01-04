@@ -89,3 +89,8 @@ const mjsConfig = (nextConfig = {}) => Object.assign({}, nextConfig, {
 module.exports = mjsConfig;
 
 
+
+module.exports = {
+  eslint: { ignoreDuringBuilds: true },
+  // your other settings here ...
+}

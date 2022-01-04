@@ -38,6 +38,7 @@ export default function SuperRole() {
                           // data-aos-duration={returnDuration(i)}
                           // data-aos-duration={isOdd(i + 1) ? "750" : "950"}
                           // data-aos-delay="50"
+                          alt="special role"
                           className="pet-ani"
                           src={item.image}
                         />

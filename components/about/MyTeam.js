@@ -19,6 +19,7 @@ const MyTeam = () => {
                           // data-aos-duration={returnDuration(i)}
                           // data-aos-duration={isOdd(i + 1) ? "750" : "950"}
                           // data-aos-delay="50"
+                          alt={item.name}
                           className="team"
                           src={item.image}
                         />
@@ -54,6 +55,7 @@ const MyTeam = () => {
                     <img
                       className="team"
                       src="/assets/images/about-us/Image 58.png"
+                      alt="you"
                     />
                     <div className="pa2 bt b--black-20">
                       <h5>You</h5>
