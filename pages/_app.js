@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "tachyons";
-// import "../styles/styles.scss";
+import "../styles/styles.scss";
 // import dynamic from "next/dynamic";
 // import { AnimatePresence, motion } from "framer-motion";
 // import { useRouter } from "next/router";
