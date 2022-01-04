@@ -4,7 +4,7 @@ import useScrollPosition from "../../hooks/useScrollPosition";
 // import useCheckMobileScreen from "../../hooks/isMobile";
 import MgButton from "./elements/mgButton";
 import { isMobile } from "react-device-detect";
-import gsap from "gsap";
+import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // gsap.registerPlugin(ScrollTrigger);
