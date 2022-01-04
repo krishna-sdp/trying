@@ -10,7 +10,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 // gsap.registerPlugin(ScrollTrigger);
 
 export default function Banners() {
-  gsap.registerPlugin(ScrollTrigger);
+  if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+
   const scrollPosition = useScrollPosition();
 
   const [colourState, setcolourState] = useState("bg-blue-theme");
