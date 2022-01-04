@@ -1,0 +1,85 @@
+.aboutus-overview {
+  .side-txt {
+    color: #02021e;
+    p {
+      // font-size: 32px;
+      letter-spacing: 0.32px;
+    }
+  }
+}
+
+.Testimonial-section {
+  h6 {
+    font-size: 24px;
+  }
+  .heading-txt {
+    font-size: 24px;
+  }
+  .side-txt {
+    .test-title {
+      letter-spacing: 0.6px;
+      color: #02021e;
+      // font-size: 60px;
+    }
+  }
+
+  .testimo-para {
+    // font-size: 24px;
+    letter-spacing: 0.24px;
+    color: #31314d;
+    line-height: 1.6;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .aboutus-overview {
+    padding-top: 2px;
+    margin-top: 0px;
+
+    .pv4 {
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
+
+    .side-txt {
+      color: #02021e;
+      p {
+        // font-size: 25px;
+        letter-spacing: 0.32px;
+        padding-top: 0;
+      }
+    }
+  }
+
+
+  .Testimonial-section {
+    h1 {
+      // font-size: 50px;
+      // padding-top: 50px;
+    }
+  }
+}
+
+.home-page {
+  .cliets-logo {
+    // padding-bottom: 0.5em;
+  }
+  .fill-current {
+    fill: currentColor;
+  }
+}
+.give-heaht {
+  padding-top: 69px;
+  // height: 69px;
+  // background: #4048DB;
+}
+
+
+.servuce-txt {
+  font-size: 38px;
+  color: #5e5e76;
+}
+.test-arr {
+  justify-content: center;
+  align-items: center;
+}

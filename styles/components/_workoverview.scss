@@ -1,0 +1,63 @@
+.work-overview {
+  background: #01051f;
+  .title-txt {
+    // font-size: 60px;
+    letter-spacing: 0.6px;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+  .work-image {
+    // width: 723px;
+    // height: 600px;
+  }
+  .work-detailssd {
+    p {
+      color: #7b7b7b;
+    }
+  }
+  .view-me {
+    border: 1px solid #c2c2db;
+    border-radius: 40px;
+    padding: 1.4em 2em;
+  }
+  .view-project {
+    color: #fff;
+    letter-spacing: 2.8px;
+    font-size: 20px;
+    &:after {
+      //     content: "";
+      // position: absolute;
+      // bottom: 0;
+      // left: 0;
+      // right: 0;
+      // height: 0.65rem;
+      // background: #ffbf00;
+    }
+  }
+  .tags {
+    color: #ffffff99;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+  }
+  .mine-table {
+    margin: 0 -1em;
+  }
+  .colun {
+    float: none;
+    /* remove bootstrap default */
+    display: table-cell;
+    vertical-align: middle;
+    justify-content: center;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 768px) {
+  .work-overview {
+    .heading-txt {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+

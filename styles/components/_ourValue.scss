@@ -1,0 +1,70 @@
+.ourValue-details {
+  h3 {
+    font-size: 24px;
+    letter-spacing: 0.24px;
+    color: #5e5e76;
+  }
+
+  .de-main-title {
+    // font-size: 60px;
+    letter-spacing: 0.6px;
+  }
+}
+
+.ourValue-details1 {
+  h3 {
+    font-size: 24px;
+    letter-spacing: 0.24px;
+    color: #ffffff99;
+  }
+
+  .de-main-title {
+    // font-size: 60px;
+    letter-spacing: 0.6px;
+    color: #ffffff;
+  }
+}
+
+@media only screen and (max-device-width: 768px) {
+  .ourValue-details1 {
+    h3 {
+      font-size: 24px;
+    }
+  }
+  .de-main-title {
+    // font-size: 45px;
+    // padding: 0px;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-device-width: 2556px) and (max-device-width: 2888px) {
+  .ourValue-details {
+    h3 {
+      font-size: 45px;
+    }
+
+    .de-main-title {
+      // font-size: 70px;
+    }
+  }
+
+  .ourValue-details1 {
+    h3 {
+      font-size: 45px;
+    }
+
+    .de-main-title {
+      // font-size: 65px;
+    }
+  }
+
+  .myteam {
+    h5 {
+      font-size: 40px !important;
+    }
+    p {
+      font-size: 30px !important;
+    }
+  }
+}
