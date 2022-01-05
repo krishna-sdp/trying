@@ -2,7 +2,7 @@ import React ,{useRef, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CSSPlugin } from "gsap/CSSPlugin";
-import gsap from "gsap";
+import gsap, {TweenMax} from "gsap";
 gsap.registerPlugin(CSSPlugin)
 const C = CSSPlugin;  // here is the gotcha....
 gsap.registerPlugin(ScrollTrigger);
@@ -17,7 +17,7 @@ export default function CardsAnimation({colourState}) {
 
     useEffect(() => {
         const load = async () => {
-          gsap.from(box1Ref.current, {
+          TweenMax.from(box1Ref.current, {
             scrollTrigger: {
               trigger: box1Ref.current,
               start: "center center",
@@ -32,7 +32,7 @@ export default function CardsAnimation({colourState}) {
             transformOrigin: "center center",
             opacity: 0,
           });
-          gsap.from(box2Ref.current, {
+          TweenMax.from(box2Ref.current, {
             scrollTrigger: {
               trigger: box2Ref.current,
               start: "center center",
