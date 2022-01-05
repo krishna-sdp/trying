@@ -4,8 +4,11 @@ import useScrollPosition from "../../hooks/useScrollPosition";
 // import useCheckMobileScreen from "../../hooks/isMobile";
 import MgButton from "./elements/mgButton";
 import { isMobile } from "react-device-detect";
-import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import gsap from "gsap";
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.core.globals("ScrollTrigger", ScrollTrigger);
 // import Router from "next/router";
 // gsap.registerPlugin(ScrollTrigger);
 
@@ -13,7 +16,6 @@ export default function Banners() {
   const box1Ref = useRef(null);
   const box2Ref = useRef(null);
 
-  const [loading, setLoading] = React.useState(false);
 
   const scrollPosition = useScrollPosition();
 
@@ -21,13 +23,6 @@ export default function Banners() {
 
   useEffect(() => {
     const load = async () => {
-      if (typeof window !== "undefined") {
-        gsap.registerPlugin(ScrollTrigger);
-        const GSAP = require("gsap/CSSRulePlugin");
-        const { CSSRulePlugin } = GSAP;
-        gsap.registerPlugin(CSSRulePlugin);
-      }
-
       gsap.from(box1Ref.current, {
         scrollTrigger: {
           trigger: box1Ref.current,
@@ -137,17 +132,19 @@ export default function Banners() {
         <div className={`second-div crl-trans ${colourState}`}>
           <div className="container-wrap2 flex">
             <div ref={box1Ref} className="container-projects w-50 initial box1">
-              <Link className="project" to="/work/neu-1">
-                <span className="cover">
-                  <img
-                    src={"/assets/images/home/001.jpg"}
-                    alt="Cover - Collectionist"
-                  />
-                </span>
-                <span className="text text-area tc white">
-                  <h3>Neu1</h3>
-                  <p>Website & Mobile App</p>
-                </span>
+              <Link href="/work/neu-1">
+                <a className="project">
+                  <span className="cover">
+                    <img
+                      src={"/assets/images/home/001.jpg"}
+                      alt="Cover - Collectionist"
+                    />
+                  </span>
+                  <span className="text text-area tc white">
+                    <h3>Neu1</h3>
+                    <p>Website & Mobile App</p>
+                  </span>
+                </a>
               </Link>
             </div>
 
@@ -272,6 +269,8 @@ export default function Banners() {
                 </span>
               </Link>
             </div>
+
+
           </div>
         </div>
       </div>

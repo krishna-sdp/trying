@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "tachyons";
-// import "./styles/styles.scss";
+import "./styles/styles.scss";
 import "react-toastify/dist/ReactToastify.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
