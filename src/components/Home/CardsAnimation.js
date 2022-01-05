@@ -1,9 +1,9 @@
 import React ,{useRef, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+import { CSSPlugin } from "gsap/CSSPlugin";
 import gsap from "gsap";
-gsap.registerPlugin(CSSRulePlugin)
+gsap.registerPlugin(CSSPlugin)
 gsap.registerPlugin(ScrollTrigger);
 gsap.core.globals("ScrollTrigger", ScrollTrigger);
 
