@@ -4,8 +4,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CSSPlugin } from "gsap/CSSPlugin";
 import gsap from "gsap";
 gsap.registerPlugin(CSSPlugin)
+const C = CSSPlugin;  // here is the gotcha....
 gsap.registerPlugin(ScrollTrigger);
 gsap.core.globals("ScrollTrigger", ScrollTrigger);
+gsap.core.globals("CSSPlugin", CSSPlugin);
 
 
 export default function CardsAnimation({colourState}) {
